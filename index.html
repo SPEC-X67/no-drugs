@@ -30,6 +30,8 @@
             background-color: var(--background-color);
             color: var(--text-color);
         }
+
+    
         
         .gradient-text {
             background: linear-gradient(90deg, var(--accent-color) 0%, var(--secondary-color) 100%);
@@ -210,6 +212,49 @@
         .testimonial-dot {
             background-color: var(--subtle-accent) !important;
         }
+
+        /* Add container max-width styles */
+        .container {
+            max-width: 1380px;  /* Standard max-width for large screens */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Content sections max-width for better readability */
+        .content-container {
+            max-width: 1204px;  /* Slightly narrower for text-heavy sections */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Update navigation styles */
+        nav.fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            height: 80px;
+        }
+
+        /* Adjust main content for fixed header */
+        main {
+            padding-top: 80px; /* Same as header height */
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -219,544 +264,548 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center">
-                <span class="text-2xl font-bold text-primary">Drug<span class="gradient-text">Free</span></span>
-            </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="nav-link font-medium">Home</a>
-                <a href="#about" class="nav-link font-medium">About</a>
-                <a href="#facts" class="nav-link font-medium">Facts</a>
-                <a href="#help" class="nav-link font-medium">Get Help</a>
-                <a href="#stories" class="nav-link font-medium">Stories</a>
-                <a href="#contact" class="nav-link font-medium">Contact</a>
-            </div>
-            <div class="flex items-center">
-                <a href="#emergency" class="hidden md:block emergency-btn px-6 py-2 rounded-full hover:shadow-lg transition duration-300 ease-in-out">
-                    <i class="fas fa-phone-alt mr-2"></i> Emergency: 1098
-                </a>
-                <button class="md:hidden focus:outline-none">
-                    <i class="fas fa-bars text-gray-700 text-xl"></i>
-                </button>
+    <nav class="fixed-header">
+        <div class="container">
+            <div class="nav-container">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-primary">Drug<span class="gradient-text">Free</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link font-medium">Home</a>
+                    <a href="#about" class="nav-link font-medium">About</a>
+                    <a href="#facts" class="nav-link font-medium">Facts</a>
+                    <a href="#help" class="nav-link font-medium">Get Help</a>
+                    <a href="#stories" class="nav-link font-medium">Stories</a>
+                    <a href="#contact" class="nav-link font-medium">Contact</a>
+                </div>
+                <div class="flex items-center">
+                    <a href="#emergency" class="hidden md:block emergency-btn px-6 py-2 rounded-full hover:shadow-lg transition duration-300 ease-in-out">
+                        <i class="fas fa-phone-alt mr-2"></i> Emergency: 1098
+                    </a>
+                    <button class="md:hidden focus:outline-none">
+                        <i class="fas fa-bars text-gray-700 text-xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section pt-24 pb-20 lg:pt-32 lg:pb-28">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-10 lg:mb-0" data-aos="fade-right">
-                    <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 leading-tight mb-6">
-                        Choose <span class="gradient-text">Freedom</span> <br>
-                        Say No To Drugs
-                    </h1>
-                    <p class="text-gray-700 text-lg mb-8 max-w-lg">
-                        Join our mission to build a drug-free society. Together, we can protect our communities and create a healthier future for all generations.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <button class="btn-primary px-8 py-3 rounded-full hover:shadow-lg transform hover:scale-105 transition duration-300 ease-in-out flex items-center">
-                            <i class="fas fa-hand-paper mr-2"></i> Take The Pledge
-                        </button>
-                        <button class="btn-secondary px-8 py-3 rounded-full hover:shadow-lg transition duration-300 ease-in-out flex items-center">
-                            <i class="fas fa-info-circle mr-2"></i> Learn More
-                        </button>
-                    </div>
-                </div>
-                <div class="lg:w-1/2" data-aos="fade-left">
-                    <img src="./imderma_photo.65805df3bf3d1.avif" alt="Drug Free Community" class="rounded-lg shadow-2xl w-full object-cover transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-aos="fade-up">Our Mission Against Drugs</h2>
-                <div class="h-1 w-20 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto mb-6"></div>
-                <p class="text-gray-600 text-lg" data-aos="fade-up" data-aos-delay="100">
-                    We are committed to combating drug abuse and addiction through education, prevention, and support. Our comprehensive approach helps individuals and communities stay drug-free.
-                </p>
-            </div>
-            
-            <div class="flex flex-col md:flex-row items-center gap-10">
-                <div class="md:w-1/2" data-aos="fade-right">
-                    <img src="./white-pills-in-glass-jar-on-green-background-free-photo.jpg" alt="Our Mission" class="rounded-lg shadow-xl w-full">
-                </div>
-                <div class="md:w-1/2" data-aos="fade-left">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Why Say No To Drugs?</h3>
-                    <p class="text-gray-600 mb-6">
-                        Drugs can have devastating effects on individuals, families, and communities. They can lead to addiction, health problems, relationship breakdown, and a cycle of harmful behaviors.
-                    </p>
-                    <div class="mb-6">
-                        <div class="flex items-start mb-4">
-                            <div class="bg-green-100 px-4 py-2 rounded-full mr-4">
-                                <i class="fas fa-brain text-green-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Protect Your Mental Health</h4>
-                                <p class="text-gray-600">Drug use can lead to anxiety, depression, and other serious mental health issues.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start mb-4">
-                            <div class="bg-blue-100 p-2 rounded-full mr-4">
-                                <i class="fas fa-heart text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Preserve Physical Wellbeing</h4>
-                                <p class="text-gray-600">Drugs can cause significant damage to your body's vital organs and systems.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-purple-100 p-2 rounded-full mr-4">
-                                <i class="fas fa-users text-purple-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Build Healthy Relationships</h4>
-                                <p class="text-gray-600">Drug-free living leads to stronger, more meaningful connections with others.</p>
-                            </div>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section pt-24 pb-20 lg:pt-32 lg:pb-28">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="container relative z-10">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="lg:w-1/2 mb-10 lg:mb-0" data-aos="fade-right">
+                        <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 leading-tight mb-6">
+                            Choose <span class="gradient-text">Freedom</span> <br>
+                            Say No To Drugs
+                        </h1>
+                        <p class="text-gray-700 text-lg mb-8 max-w-lg">
+                            Join our mission to build a drug-free society. Together, we can protect our communities and create a healthier future for all generations.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <button class="btn-primary px-8 py-3 rounded-full hover:shadow-lg transform hover:scale-105 transition duration-300 ease-in-out flex items-center">
+                                <i class="fas fa-hand-paper mr-2"></i> Take The Pledge
+                            </button>
+                            <button class="btn-secondary px-8 py-3 rounded-full hover:shadow-lg transition duration-300 ease-in-out flex items-center">
+                                <i class="fas fa-info-circle mr-2"></i> Learn More
+                            </button>
                         </div>
                     </div>
-                    <button class="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold px-6 py-3 rounded-lg hover:shadow-lg transition duration-300 ease-in-out flex items-center">
-                        <i class="fas fa-arrow-right mr-2"></i> Learn More About Our Work
-                    </button>
+                    <div class="lg:w-1/2" data-aos="fade-left">
+                        <img src="./imderma_photo.65805df3bf3d1.avif" alt="Drug Free Community" class="rounded-lg shadow-2xl w-full object-cover transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Facts Section -->
-    <section id="facts" class="py-20 text-gray-800">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Drug Abuse Facts</h2>
-                <div class="h-1 w-20 bg-gradient-to-r from-accent to-secondary mx-auto mb-6"></div>
-                <p class="text-gray-700 text-lg" data-aos="fade-up" data-aos-delay="100">
-                    Education is key to prevention. Understanding the facts about drug abuse helps us make informed decisions.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="facts-card rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-accent text-4xl mb-4">
-                        <i class="fas fa-syringe"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Health Impacts</h3>
-                    <p class="text-gray-700 mb-4">
-                        Drug use can lead to heart disease, stroke, cancer, lung disease, mental disorders, and more.
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-gray-50">
+            <div class="content-container">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-aos="fade-up">Our Mission Against Drugs</h2>
+                    <div class="h-1 w-20 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto mb-6"></div>
+                    <p class="text-gray-600 text-lg" data-aos="fade-up" data-aos-delay="100">
+                        We are committed to combating drug abuse and addiction through education, prevention, and support. Our comprehensive approach helps individuals and communities stay drug-free.
                     </p>
-                    <ul class="text-gray-600 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Increased risk of overdose</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Weakened immune system</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Long-term organ damage</span>
-                        </li>
-                    </ul>
                 </div>
                 
-                <div class="facts-card rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-accent text-4xl mb-4">
-                        <i class="fas fa-brain"></i>
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2" data-aos="fade-right">
+                        <img src="./white-pills-in-glass-jar-on-green-background-free-photo.jpg" alt="Our Mission" class="rounded-lg shadow-xl w-full">
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Psychological Effects</h3>
-                    <p class="text-gray-700 mb-4">
-                        Substance abuse can trigger or worsen mental health conditions and alter brain chemistry.
-                    </p>
-                    <ul class="text-gray-600 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Increased anxiety and depression</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Memory and cognitive issues</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Altered decision-making ability</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="facts-card rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-accent text-4xl mb-4">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Social Consequences</h3>
-                    <p class="text-gray-700 mb-4">
-                        Drug abuse affects not just individuals but their families, friends, and entire communities.
-                    </p>
-                    <ul class="text-gray-600 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Strained personal relationships</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Financial difficulties</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Legal problems and incarceration</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Help Section -->
-    <section id="help" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-aos="fade-up">Need Help?</h2>
-                <div class="h-1 w-20 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto mb-6"></div>
-                <p class="text-gray-600 text-lg" data-aos="fade-up" data-aos-delay="100">
-                    If you or someone you know is struggling with substance abuse, help is available. You're not alone in this journey.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card bg-white rounded-xl shadow-lg p-8 border-t-4 border-blue-600" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-blue-600 text-4xl mb-6">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Helpline</h3>
-                    <p class="text-gray-600 mb-6">
-                        Our 24/7 confidential helpline provides immediate support and guidance for those in need.
-                    </p>
-                    <a href="tel:1098" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out">
-                        Call 1098
-                    </a>
-                </div>
-                
-                <div class="card bg-white rounded-xl shadow-lg p-8 border-t-4 border-green-600" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-green-600 text-4xl mb-6">
-                        <i class="fas fa-clinic-medical"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Treatment Centers</h3>
-                    <p class="text-gray-600 mb-6">
-                        Find accredited rehabilitation centers that offer personalized treatment programs.
-                    </p>
-                    <a href="#" class="inline-block bg-green-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300 ease-in-out">
-                        Find Centers
-                    </a>
-                </div>
-                
-                <div class="card bg-white rounded-xl shadow-lg p-8 border-t-4 border-purple-600" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-purple-600 text-4xl mb-6">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Support Groups</h3>
-                    <p class="text-gray-600 mb-6">
-                        Connect with others who understand your journey through recovery and sobriety.
-                    </p>
-                    <a href="#" class="inline-block bg-purple-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-purple-700 transition duration-300 ease-in-out">
-                        Join Groups
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="stories" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-aos="fade-up">Recovery Stories</h2>
-                <div class="h-1 w-20 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto mb-6"></div>
-                <p class="text-gray-600 text-lg" data-aos="fade-up" data-aos-delay="100">
-                    Real stories from real people who have overcome addiction and found a new path in life.
-                </p>
-            </div>
-            
-            <div class="testimonial-slider relative" data-aos="fade-up">
-                <div class="testimonial-slide flex transition-all duration-500" id="testimonialSlide">
-                    <div class="min-w-full px-4">
-                        <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-600">
-                            <div class="flex items-center mb-6">
-                                <div class="bg-blue-100 rounded-full py-2 px-3 mr-4">
-                                    <i class="fas fa-user text-blue-600 text-xl"></i>
+                    <div class="md:w-1/2" data-aos="fade-left">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Why Say No To Drugs?</h3>
+                        <p class="text-gray-600 mb-6">
+                            Drugs can have devastating effects on individuals, families, and communities. They can lead to addiction, health problems, relationship breakdown, and a cycle of harmful behaviors.
+                        </p>
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div class="bg-green-100 px-4 py-2 rounded-full mr-4">
+                                    <i class="fas fa-brain text-green-600"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-lg text-gray-800">John D.</h4>
-                                    <p class="text-gray-500">Recovery Journey: 3 Years</p>
+                                    <h4 class="font-semibold text-gray-800">Protect Your Mental Health</h4>
+                                    <p class="text-gray-600">Drug use can lead to anxiety, depression, and other serious mental health issues.</p>
                                 </div>
                             </div>
-                            <p class="text-gray-600 italic mb-6">
-                                "I never thought I could break free from the cycle of addiction. With the right support and determination, I've rebuilt my life and found purpose again. Now I help others find their path to recovery."
-                            </p>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                            <div class="flex items-start mb-4">
+                                <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-heart text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Preserve Physical Wellbeing</h4>
+                                    <p class="text-gray-600">Drugs can cause significant damage to your body's vital organs and systems.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-users text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Build Healthy Relationships</h4>
+                                    <p class="text-gray-600">Drug-free living leads to stronger, more meaningful connections with others.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold px-6 py-3 rounded-lg hover:shadow-lg transition duration-300 ease-in-out flex items-center">
+                            <i class="fas fa-arrow-right mr-2"></i> Learn More About Our Work
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Facts Section -->
+        <section id="facts" class="py-20 text-gray-800">
+            <div class="content-container">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Drug Abuse Facts</h2>
+                    <div class="h-1 w-20 bg-gradient-to-r from-accent to-secondary mx-auto mb-6"></div>
+                    <p class="text-gray-700 text-lg" data-aos="fade-up" data-aos-delay="100">
+                        Education is key to prevention. Understanding the facts about drug abuse helps us make informed decisions.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="facts-card rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-accent text-4xl mb-4">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Health Impacts</h3>
+                        <p class="text-gray-700 mb-4">
+                            Drug use can lead to heart disease, stroke, cancer, lung disease, mental disorders, and more.
+                        </p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Increased risk of overdose</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Weakened immune system</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Long-term organ damage</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="facts-card rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-accent text-4xl mb-4">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Psychological Effects</h3>
+                        <p class="text-gray-700 mb-4">
+                            Substance abuse can trigger or worsen mental health conditions and alter brain chemistry.
+                        </p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Increased anxiety and depression</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Memory and cognitive issues</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Altered decision-making ability</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="facts-card rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-accent text-4xl mb-4">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Social Consequences</h3>
+                        <p class="text-gray-700 mb-4">
+                            Drug abuse affects not just individuals but their families, friends, and entire communities.
+                        </p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Strained personal relationships</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Financial difficulties</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Legal problems and incarceration</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Section -->
+        <section id="help" class="py-20 bg-white">
+            <div class="content-container">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-aos="fade-up">Need Help?</h2>
+                    <div class="h-1 w-20 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto mb-6"></div>
+                    <p class="text-gray-600 text-lg" data-aos="fade-up" data-aos-delay="100">
+                        If you or someone you know is struggling with substance abuse, help is available. You're not alone in this journey.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card bg-white rounded-xl shadow-lg p-8 border-t-4 border-blue-600" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-blue-600 text-4xl mb-6">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Helpline</h3>
+                        <p class="text-gray-600 mb-6">
+                            Our 24/7 confidential helpline provides immediate support and guidance for those in need.
+                        </p>
+                        <a href="tel:1098" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out">
+                            Call 1098
+                        </a>
+                    </div>
+                    
+                    <div class="card bg-white rounded-xl shadow-lg p-8 border-t-4 border-green-600" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-green-600 text-4xl mb-6">
+                            <i class="fas fa-clinic-medical"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Treatment Centers</h3>
+                        <p class="text-gray-600 mb-6">
+                            Find accredited rehabilitation centers that offer personalized treatment programs.
+                        </p>
+                        <a href="#" class="inline-block bg-green-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300 ease-in-out">
+                            Find Centers
+                        </a>
+                    </div>
+                    
+                    <div class="card bg-white rounded-xl shadow-lg p-8 border-t-4 border-purple-600" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-purple-600 text-4xl mb-6">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Support Groups</h3>
+                        <p class="text-gray-600 mb-6">
+                            Connect with others who understand your journey through recovery and sobriety.
+                        </p>
+                        <a href="#" class="inline-block bg-purple-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-purple-700 transition duration-300 ease-in-out">
+                            Join Groups
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="stories" class="py-20 bg-gray-50">
+            <div class="content-container">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-aos="fade-up">Recovery Stories</h2>
+                    <div class="h-1 w-20 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto mb-6"></div>
+                    <p class="text-gray-600 text-lg" data-aos="fade-up" data-aos-delay="100">
+                        Real stories from real people who have overcome addiction and found a new path in life.
+                    </p>
+                </div>
+                
+                <div class="testimonial-slider relative" data-aos="fade-up">
+                    <div class="testimonial-slide flex transition-all duration-500" id="testimonialSlide">
+                        <div class="min-w-full px-4">
+                            <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-600">
+                                <div class="flex items-center mb-6">
+                                    <div class="bg-blue-100 rounded-full py-2 px-3 mr-4">
+                                        <i class="fas fa-user text-blue-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg text-gray-800">John D.</h4>
+                                        <p class="text-gray-500">Recovery Journey: 3 Years</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 italic mb-6">
+                                    "I never thought I could break free from the cycle of addiction. With the right support and determination, I've rebuilt my life and found purpose again. Now I help others find their path to recovery."
+                                </p>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="min-w-full px-4">
+                            <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-green-600">
+                                <div class="flex items-center mb-6">
+                                    <div class="bg-green-100 rounded-full py-2 px-3 mr-4">
+                                        <i class="fas fa-user text-green-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg text-gray-800">Sarah M.</h4>
+                                        <p class="text-gray-500">Recovery Journey: 5 Years</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 italic mb-6">
+                                    "After hitting rock bottom, I found the courage to seek help. The recovery journey hasn't been easy, but it's been worth every step. Today, I'm reunited with my family and living a life I never thought possible."
+                                </p>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="min-w-full px-4">
+                            <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-purple-600">
+                                <div class="flex items-center mb-6">
+                                    <div class="bg-purple-100 rounded-full py-2 px-3 mr-4">
+                                        <i class="fas fa-user text-purple-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg text-gray-800">Michael R.</h4>
+                                        <p class="text-gray-500">Recovery Journey: 2 Years</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 italic mb-6">
+                                    "Drugs took everything from me - my career, my relationships, my self-respect. The rehabilitation program gave me the tools to rebuild. Now I wake up every day grateful for a second chance at life."
+                                </p>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="min-w-full px-4">
-                        <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-green-600">
-                            <div class="flex items-center mb-6">
-                                <div class="bg-green-100 rounded-full py-2 px-3 mr-4">
-                                    <i class="fas fa-user text-green-600 text-xl"></i>
+                    <div class="flex justify-center mt-8 space-x-2">
+                        <button class="h-3 w-3 rounded-full bg-blue-300 hover:bg-blue-600 transition duration-300 ease-in-out testimonial-dot active" data-index="0"></button>
+                        <button class="h-3 w-3 rounded-full bg-blue-300 hover:bg-blue-600 transition duration-300 ease-in-out testimonial-dot" data-index="1"></button>
+                        <button class="h-3 w-3 rounded-full bg-blue-300 hover:bg-blue-600 transition duration-300 ease-in-out testimonial-dot" data-index="2"></button>
+                    </div>
+                    
+                    <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white py-3 px-4 rounded-full shadow-lg hover:bg-gray-100 focus:outline-none" id="prevButton">
+                        <i class="fas fa-chevron-left text-gray-600"></i>
+                    </button>
+                    <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white py-3 px-4 rounded-full shadow-lg hover:bg-gray-100 focus:outline-none" id="nextButton">
+                        <i class="fas fa-chevron-right text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section class="py-20 community-section relative overflow-hidden">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="container relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Join Our Community</h2>
+                        <p class="text-gray-700 text-lg mb-8">
+                            Be part of a supportive network that is committed to creating drug-free environments. Together, we can make a difference in our communities.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-white bg-opacity-90 rounded-lg p-5">
+                                <div class="text-accent text-3xl mb-4">
+                                    <i class="fas fa-bullhorn"></i>
                                 </div>
-                                <div>
-                                    <h4 class="font-bold text-lg text-gray-800">Sarah M.</h4>
-                                    <p class="text-gray-500">Recovery Journey: 5 Years</p>
+                                <h3 class="text-xl font-semibold mb-2">Become an Advocate</h3>
+                                <p class="text-gray-700">
+                                    Help spread awareness about drug prevention in your community.
+                                </p>
+                            </div>
+                            <div class="bg-white bg-opacity-90 rounded-lg p-5">
+                                <div class="text-accent text-3xl mb-4">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Volunteer</h3>
+                                <p class="text-gray-700">
+                                    Donate your time and skills to support our various programs.
+                                </p>
+                            </div>
+                        </div>
+                        <button class="btn-primary px-8 py-3 rounded-lg hover:shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                            <i class="fas fa-users mr-2"></i> Join Us Today
+                        </button>
+                    </div>
+                    <div class="md:w-1/2" data-aos="fade-left">
+                        <form class="bg-white bg-opacity-95 rounded-xl p-8 shadow-xl">
+                            <h3 class="text-2xl font-bold mb-6 text-center text-gray-800">Sign Up for Updates</h3>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="name">Full Name</label>
+                                <input type="text" id="name" class="w-full rounded-lg px-4 py-3 text-gray-700 placeholder-gray-500" placeholder="Your name">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="email">Email Address</label>
+                                <input type="email" id="email" class="w-full rounded-lg px-4 py-3 text-gray-700 placeholder-gray-500" placeholder="Your email">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2">I'm interested in:</label>
+                                <div class="flex flex-wrap gap-4">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox text-accent rounded">
+                                        <span class="ml-2 text-gray-700">Volunteering</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox text-accent rounded">
+                                        <span class="ml-2 text-gray-700">Events</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox text-accent rounded">
+                                        <span class="ml-2 text-gray-700">Education</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox text-accent rounded">
+                                        <span class="ml-2 text-gray-700">Support</span>
+                                    </label>
                                 </div>
                             </div>
-                            <p class="text-gray-600 italic mb-6">
-                                "After hitting rock bottom, I found the courage to seek help. The recovery journey hasn't been easy, but it's been worth every step. Today, I'm reunited with my family and living a life I never thought possible."
-                            </p>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                            <button type="submit" class="w-full btn-primary py-3 rounded-lg hover:shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="content-container">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-aos="fade-up">Contact Us</h2>
+                    <div class="h-1 w-20 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto mb-6"></div>
+                    <p class="text-gray-600 text-lg" data-aos="fade-up" data-aos-delay="100">
+                        Have questions or need assistance? We're here to help. Reach out to our team for support.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/3" data-aos="fade-right">
+                        <div class="bg-gray-50 rounded-xl p-8 shadow-lg h-full">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6">Get in Touch</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="text-orange-500 text-xl mr-4">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">Our Location</h4>
+                                        <p class="text-gray-600">123 Prevention Avenue, Community Center, City</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-orange-500 text-xl mr-4">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">Phone</h4>
+                                        <p class="text-gray-600">Helpline: 1098</p>
+                                        <p class="text-gray-600">Office: +123-456-7890</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-orange-500 text-xl mr-4">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">Email</h4>
+                                        <p class="text-gray-600">help@drugfree.org</p>
+                                        <p class="text-gray-600">info@drugfree.org</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-orange-500 text-xl mr-4">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">Hours</h4>
+                                        <p class="text-gray-600">Helpline: 24/7</p>
+                                        <p class="text-gray-600">Office: Mon-Fri, 9:00 AM - 5:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-8">
+                                <div class="flex space-x-4">
+                                    <a href="#" class="bg-blue-600 text-white py-3 px-4 rounded-full hover:bg-blue-700 transition duration-300 ease-in-out">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="bg-blue-400 text-white py-3 px-4 rounded-full hover:bg-blue-500 transition duration-300 ease-in-out">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="bg-pink-600 text-white py-3 px-4 rounded-full hover:bg-pink-700 transition duration-300 ease-in-out">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="bg-red-600 text-white py-3 px-4 rounded-full hover:bg-red-700 transition duration-300 ease-in-out">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="min-w-full px-4">
-                        <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-purple-600">
-                            <div class="flex items-center mb-6">
-                                <div class="bg-purple-100 rounded-full py-2 px-3 mr-4">
-                                    <i class="fas fa-user text-purple-600 text-xl"></i>
+                    <div class="lg:w-2/3" data-aos="fade-left">
+                        <form class="bg-gray-50 rounded-xl p-8 shadow-lg">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6">Send a Message</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-gray-700 mb-2" for="contactName">Full Name</label>
+                                    <input type="text" id="contactName" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-400" placeholder="Your name">
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-lg text-gray-800">Michael R.</h4>
-                                    <p class="text-gray-500">Recovery Journey: 2 Years</p>
+                                    <label class="block text-gray-700 mb-2" for="contactEmail">Email Address</label>
+                                    <input type="email" id="contactEmail" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-400" placeholder="Your email">
                                 </div>
                             </div>
-                            <p class="text-gray-600 italic mb-6">
-                                "Drugs took everything from me - my career, my relationships, my self-respect. The rehabilitation program gave me the tools to rebuild. Now I wake up every day grateful for a second chance at life."
-                            </p>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="contactSubject">Subject</label>
+                                <input type="text" id="contactSubject" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-400" placeholder="Message subject">
                             </div>
-                        </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="contactMessage">Message</label>
+                                <textarea id="contactMessage" rows="5" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-400" placeholder="Your message..."></textarea>
+                            </div>
+                            <button type="submit" class="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold px-8 py-3 rounded-lg hover:shadow-lg transition duration-300 ease-in-out">
+                                <i class="fas fa-paper-plane mr-2"></i> Send Message
+                            </button>
+                        </form>
                     </div>
                 </div>
-                
-                <div class="flex justify-center mt-8 space-x-2">
-                    <button class="h-3 w-3 rounded-full bg-blue-300 hover:bg-blue-600 transition duration-300 ease-in-out testimonial-dot active" data-index="0"></button>
-                    <button class="h-3 w-3 rounded-full bg-blue-300 hover:bg-blue-600 transition duration-300 ease-in-out testimonial-dot" data-index="1"></button>
-                    <button class="h-3 w-3 rounded-full bg-blue-300 hover:bg-blue-600 transition duration-300 ease-in-out testimonial-dot" data-index="2"></button>
-                </div>
-                
-                <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white py-3 px-4 rounded-full shadow-lg hover:bg-gray-100 focus:outline-none" id="prevButton">
-                    <i class="fas fa-chevron-left text-gray-600"></i>
-                </button>
-                <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white py-3 px-4 rounded-full shadow-lg hover:bg-gray-100 focus:outline-none" id="nextButton">
-                    <i class="fas fa-chevron-right text-gray-600"></i>
-                </button>
             </div>
-        </div>
-    </section>
-
-    <!-- Community Section -->
-    <section class="py-20 community-section relative overflow-hidden">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Join Our Community</h2>
-                    <p class="text-gray-700 text-lg mb-8">
-                        Be part of a supportive network that is committed to creating drug-free environments. Together, we can make a difference in our communities.
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div class="bg-white bg-opacity-90 rounded-lg p-5">
-                            <div class="text-accent text-3xl mb-4">
-                                <i class="fas fa-bullhorn"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold mb-2">Become an Advocate</h3>
-                            <p class="text-gray-700">
-                                Help spread awareness about drug prevention in your community.
-                            </p>
-                        </div>
-                        <div class="bg-white bg-opacity-90 rounded-lg p-5">
-                            <div class="text-accent text-3xl mb-4">
-                                <i class="fas fa-hands-helping"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold mb-2">Volunteer</h3>
-                            <p class="text-gray-700">
-                                Donate your time and skills to support our various programs.
-                            </p>
-                        </div>
-                    </div>
-                    <button class="btn-primary px-8 py-3 rounded-lg hover:shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-                        <i class="fas fa-users mr-2"></i> Join Us Today
-                    </button>
-                </div>
-                <div class="md:w-1/2" data-aos="fade-left">
-                    <form class="bg-white bg-opacity-95 rounded-xl p-8 shadow-xl">
-                        <h3 class="text-2xl font-bold mb-6 text-center text-gray-800">Sign Up for Updates</h3>
-                        <div class="mb-6">
-                            <label class="block text-gray-700 mb-2" for="name">Full Name</label>
-                            <input type="text" id="name" class="w-full rounded-lg px-4 py-3 text-gray-700 placeholder-gray-500" placeholder="Your name">
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-gray-700 mb-2" for="email">Email Address</label>
-                            <input type="email" id="email" class="w-full rounded-lg px-4 py-3 text-gray-700 placeholder-gray-500" placeholder="Your email">
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-gray-700 mb-2">I'm interested in:</label>
-                            <div class="flex flex-wrap gap-4">
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="form-checkbox text-accent rounded">
-                                    <span class="ml-2 text-gray-700">Volunteering</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="form-checkbox text-accent rounded">
-                                    <span class="ml-2 text-gray-700">Events</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="form-checkbox text-accent rounded">
-                                    <span class="ml-2 text-gray-700">Education</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="form-checkbox text-accent rounded">
-                                    <span class="ml-2 text-gray-700">Support</span>
-                                </label>
-                            </div>
-                        </div>
-                        <button type="submit" class="w-full btn-primary py-3 rounded-lg hover:shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-                            Subscribe
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-aos="fade-up">Contact Us</h2>
-                <div class="h-1 w-20 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto mb-6"></div>
-                <p class="text-gray-600 text-lg" data-aos="fade-up" data-aos-delay="100">
-                    Have questions or need assistance? We're here to help. Reach out to our team for support.
-                </p>
-            </div>
-            
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/3" data-aos="fade-right">
-                    <div class="bg-gray-50 rounded-xl p-8 shadow-lg h-full">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Get in Touch</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="text-orange-500 text-xl mr-4">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800 mb-1">Our Location</h4>
-                                    <p class="text-gray-600">123 Prevention Avenue, Community Center, City</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="text-orange-500 text-xl mr-4">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800 mb-1">Phone</h4>
-                                    <p class="text-gray-600">Helpline: 1098</p>
-                                    <p class="text-gray-600">Office: +123-456-7890</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="text-orange-500 text-xl mr-4">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800 mb-1">Email</h4>
-                                    <p class="text-gray-600">help@drugfree.org</p>
-                                    <p class="text-gray-600">info@drugfree.org</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="text-orange-500 text-xl mr-4">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800 mb-1">Hours</h4>
-                                    <p class="text-gray-600">Helpline: 24/7</p>
-                                    <p class="text-gray-600">Office: Mon-Fri, 9:00 AM - 5:00 PM</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-8">
-                            <div class="flex space-x-4">
-                                <a href="#" class="bg-blue-600 text-white py-3 px-4 rounded-full hover:bg-blue-700 transition duration-300 ease-in-out">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="bg-blue-400 text-white py-3 px-4 rounded-full hover:bg-blue-500 transition duration-300 ease-in-out">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="bg-pink-600 text-white py-3 px-4 rounded-full hover:bg-pink-700 transition duration-300 ease-in-out">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="#" class="bg-red-600 text-white py-3 px-4 rounded-full hover:bg-red-700 transition duration-300 ease-in-out">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="lg:w-2/3" data-aos="fade-left">
-                    <form class="bg-gray-50 rounded-xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Send a Message</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label class="block text-gray-700 mb-2" for="contactName">Full Name</label>
-                                <input type="text" id="contactName" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-400" placeholder="Your name">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 mb-2" for="contactEmail">Email Address</label>
-                                <input type="email" id="contactEmail" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-400" placeholder="Your email">
-                            </div>
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-gray-700 mb-2" for="contactSubject">Subject</label>
-                            <input type="text" id="contactSubject" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-400" placeholder="Message subject">
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-gray-700 mb-2" for="contactMessage">Message</label>
-                            <textarea id="contactMessage" rows="5" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-400" placeholder="Your message..."></textarea>
-                        </div>
-                        <button type="submit" class="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold px-8 py-3 rounded-lg hover:shadow-lg transition duration-300 ease-in-out">
-                            <i class="fas fa-paper-plane mr-2"></i> Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-gray-50 py-12">
-        <div class="container mx-auto px-4">
+        <div class="container">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div>
                     <h3 class="text-2xl font-bold text-gray-800">Drug<span class="gradient-text">Free</span></h3>
